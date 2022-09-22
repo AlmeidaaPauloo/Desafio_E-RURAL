@@ -6,6 +6,9 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddTransient<ISalaRepository, SalaRepository>();
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddTransient<IPerfilRepository, PerfilRepository>();
+builder.Services.AddTransient<IUsuarioPerfilRepository, UsuarioPerfilRepository>();
 builder.Services.AddDbContext<DataContext>(options =>
      options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
